@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Rulzz • JBAKUN • JB Gaming Store</title>
+    <!-- Google Fonts + Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(145deg, #0b0c10 0%, #1a1e2a 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+        }
+
+        .linktree-container {
+            max-width: 620px;
+            width: 100%;
+            background: rgba(18, 22, 35, 0.75);
+            backdrop-filter: blur(12px);
+            border-radius: 2rem;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+            transition: all 0.2s ease;
+        }
+
+        /* Profile */
+        .profile {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid rgba(255, 215, 0, 0.8);
+            box-shadow: 0 12px 25px -8px rgba(0, 0, 0, 0.5);
+            background: #1e1e2f;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .username {
+            font-size: 1.7rem;
+            font-weight: 700;
+            background: linear-gradient(120deg, #ffffff, #e0e0ff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+        }
+
+        .jbakun-brand {
+            font-size: 1.2rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #FFD166, #FF6B6B);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+            margin-top: 0.25rem;
+        }
+
+        .bio-bilingual {
+            margin-top: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .bio-line {
+            font-size: 0.85rem;
+            color: #cdd6f4;
+            background: rgba(0,0,0,0.3);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 0 auto;
+        }
+
+        /* Links */
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 1.5rem 0 1.5rem;
+        }
+
+        .link-card {
+            background: rgba(10, 14, 23, 0.7);
+            backdrop-filter: blur(4px);
+            border-radius: 1.5rem;
+            transition: all 0.25s ease;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .link-card a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #f0f3ff;
+            font-weight: 600;
+            font-size: 1.05rem;
+            gap: 12px;
+        }
+
+        .link-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .link-left i {
+            width: 28px;
+            font-size: 1.4rem;
+            color: #ffb347;
+            text-align: center;
+        }
+
+        .link-right i {
+            font-size: 1rem;
+            color: #6c7a9e;
+            transition: transform 0.2s;
+        }
+
+        .link-card:hover {
+            background: rgba(30, 40, 60, 0.8);
+            border-color: rgba(255, 180, 70, 0.5);
+            transform: scale(1.01);
+            box-shadow: 0 10px 20px -8px rgba(0,0,0,0.4);
+        }
+
+        .link-card:hover .link-right i {
+            transform: translateX(4px);
+            color: #ffb347;
+        }
+
+        .badge-game {
+            background: rgba(255, 180, 70, 0.15);
+            border-radius: 30px;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #ffc285;
+            margin-left: 8px;
+        }
+
+        /* Social Footer */
+        .social-footer {
+            display: flex;
+            justify-content: center;
+            gap: 1.8rem;
+            margin-top: 1.8rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .social-footer a {
+            color: #a6b3dc;
+            font-size: 1.5rem;
+            transition: all 0.2s;
+        }
+
+        .social-footer a:hover {
+            color: #ffb347;
+            transform: translateY(-3px);
+        }
+
+        .credit {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.7rem;
+            color: #5f6b92;
+        }
+
+        @media (max-width: 480px) {
+            .linktree-container {
+                padding: 1.5rem 1.2rem;
+            }
+            .avatar {
+                width: 100px;
+                height: 100px;
+            }
+            .username {
+                font-size: 1.4rem;
+            }
+            .jbakun-brand {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="linktree-container">
+    <!-- Profile -->
+    <div class="profile">
+        <div class="avatar">
+            <!-- GANTI NAMA FILE INI SESUAI DENGAN FOTO YANG UPLOAD -->
+            <img src="1000497034.png" alt="JBAKUN Profile">
+        </div>
+        <div class="username">Rulzz 🔥</div>
+        <div class="jbakun-brand">JBAKUN • Trusted Seller</div>
+        <div class="bio-bilingual">
+            <div class="bio-line">✨ Jual Beli Akun & Top Up Terpercaya ✨</div>
+            <div class="bio-line">⚡ Fast Response • COD • Rekber ⚡</div>
+            <div class="bio-line">🎮 Free Fire • MLBB • Roblox 🎮</div>
+        </div>
+    </div>
+
+    <!-- Daftar Link -->
+    <div class="links">
+        <!-- Jual Beli Akun Free Fire -->
+        <div class="link-card">
+            <a href="#" target="_blank" rel="noopener noreferrer" id="ff-link">
+                <div class="link-left">
+                    <i class="fas fa-fire"></i>
+                    <span>Jual Beli Akun Free Fire <span class="badge-game">FF</span></span>
+                </div>
+                <div class="link-right">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+        </div>
+
+        <!-- Jual Beli Akun Mobile Legends -->
+        <div class="link-card">
+            <a href="#" target="_blank" rel="noopener noreferrer" id="ml-link">
+                <div class="link-left">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Jual Beli Akun Mobile Legends <span class="badge-game">MLBB</span></span>
+                </div>
+                <div class="link-right">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+        </div>
+
+        <!-- Jual Beli Akun Roblox -->
+        <div class="link-card">
+            <a href="#" target="_blank" rel="noopener noreferrer" id="roblox-akun-link">
+                <div class="link-left">
+                    <i class="fab fa-roblox"></i>
+                    <span>Jual Beli Akun Roblox <span class="badge-game">ROBLOX</span></span>
+                </div>
+                <div class="link-right">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+        </div>
+
+        <!-- Top Up Roblox & Diamond -->
+        <div class="link-card">
+            <a href="#" target="_blank" rel="noopener noreferrer" id="topup-link">
+                <div class="link-left">
+                    <i class="fas fa-coins"></i>
+                    <span>Top Up Roblox & Game Lainnya</span>
+                </div>
+                <div class="link-right">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+        </div>
+
+        <!-- Grup Komunitas WhatsApp -->
+        <div class="link-card">
+            <a href="#" target="_blank" rel="noopener noreferrer" id="group-link">
+                <div class="link-left">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Grup Komunitas JB (WhatsApp)</span>
+                </div>
+                <div class="link-right">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="social-footer">
+        <a href="#" target="_blank" id="ig-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank" id="tiktok-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    </div>
+
+    <div class="credit">
+        🔥 JBAKUN • Trusted Seller • Fast Response 🔥
+    </div>
+</div>
+
+<script>
+    // Konfigurasi Link
+    const WA_NUMBER = "628815359582";
+    const BASE_WA = `https://wa.me/${WA_NUMBER}?text=`;
+
+    const PESAN_FF = "Halo%20Rulzz%2C%20saya%20mau%20beli%20akun%20Free%20Fire.%20Ada%20stok%3F";
+    const PESAN_ML = "Halo%20Rulzz%2C%20saya%20mau%20beli%20akun%20Mobile%20Legends.%20Info%20stok%20dong";
+    const PESAN_ROBLOX_AKUN = "Halo%20Rulzz%2C%20saya%20mau%20beli%20akun%20Roblox.%20Ada%20yang%20ready%3F";
+    const PESAN_TOPUP = "Halo%20Rulzz%2C%20saya%20mau%20top%20up%20Roblox%20%2F%20game%20lainnya.%20Minta%20list%20harga";
+
+    const GROUP_LINK = "https://chat.whatsapp.com/LYTKdB8UFTSJhWJhzjTtyz?mode=gi_t";
+
+    const INSTAGRAM_URL = "https://www.instagram.com/only.rulzaidal_?igsh=M2dyZW5oaWZxejRl";
+    const TIKTOK_URL = "https://www.tiktok.com/@aluuuuuuuuu_?_r=1&_d=edd33m0mecf2cl&sec_uid=MS4wLjABAAAAjRX1NBsSnySqObqpO25ws71mpykQ9DfNSZB8_vUX_EhXcrCrgRNHDC0UfPXBSQ5G&share_author_id=7054076201141306374&sharer_language=id&source=h5_t&u_code=dmka6666ebakme&timestamp=1775027424&user_id=7054076201141306374&sec_user_id=MS4wLjABAAAAjRX1NBsSnySqObqpO25ws71mpykQ9DfNSZB8_vUX_EhXcrCrgRNHDC0UfPXBSQ5G&item_author_type=1&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7622207930788005653&share_link_id=04234f49-3941-4bee-bc00-5682ebe7d7ea&share_app_id=1180&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1";
+
+    document.getElementById("ff-link").href = BASE_WA + PESAN_FF;
+    document.getElementById("ml-link").href = BASE_WA + PESAN_ML;
+    document.getElementById("roblox-akun-link").href = BASE_WA + PESAN_ROBLOX_AKUN;
+    document.getElementById("topup-link").href = BASE_WA + PESAN_TOPUP;
+    document.getElementById("group-link").href = GROUP_LINK;
+
+    document.getElementById("ig-icon").href = INSTAGRAM_URL;
+    document.getElementById("tiktok-icon").href = TIKTOK_URL;
+</script>
+
+</body>
+</html>
